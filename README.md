@@ -2,6 +2,14 @@
 
 I kept this project fairly simple while still meeting all of the requirements in the spec. I wrote a small test file to showcase what testing this program might look like. While writing the code, I could see a problem like this being a candidate for some parallel processing but for the sake of this take home project, I didn't go further into it. If that is a direction that you would like me to explore, please let me know and I can adapt accordingly.
 
+
+## High Level Solution
+1. Open the file and read it line by line
+2. Split the line into a list of stringContents using the brackets as delimiters
+3. Iterate through the list of stringContents and check if it contains a valid sequence
+    1. If it contains a valid sequence and is within brackets, break and continue to the next line
+    2. If it contains a valid sequence and is outside of brackets, set a shouldPrint variable to True. Only print if it reaches the end of the line without having a valid sequence inside brackets. Count the number of strings that are printed.
+
 Assumptions I made:
 1. There are no nested brackets
 2. Every open bracket will have a corresponding closing bracket
@@ -22,15 +30,6 @@ To run the tests, run the following command in your terminal:
 
 
 To create a big text file to use as input, uncomment line 53 (`createInputFile("provided_input.txt")`).
-
-
-## High Level Solution
-1. Open the file and read it line by line
-2. Split the line into a list of stringContents using the brackets as delimiters
-3. Iterate through the list of stringContents and check if it contains a valid sequence
-    1. If it contains a valid sequence and is within brackets, break and continue to the next line
-    2. If it contains a valid sequence and is outside of brackets, set a shouldPrint variable to True. Only print if it reaches the end of the line without having a valid sequence inside brackets. Count the number of strings that are printed.
-
 
 ## Thought Process:
 The complexity in this problem arose from trying to make the program more efficient to handle larger text files. By using the createInputFile method, I made a file of about 600 megabytes to test the performance of my code against a large input. 
